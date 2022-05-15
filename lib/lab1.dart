@@ -3,56 +3,34 @@ import 'package:csv/csv.dart';
 import 'dart:async' show Future;
 import 'package:flutter/services.dart' show rootBundle;
 
-void main() {
-  runApp(const MyApp());
-}
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
+class TableLayout extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Happy',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Happy'),
-    );
-  }
+  _TableLayoutState createState() => _TableLayoutState();
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-    List<List<dynamic>> data = [];
+class _TableLayoutState extends State<TableLayout> {
+  List<List<dynamic>> data = [];
 
   loadAsset() async {
-    final myData = await rootBundle.loadString("lib/sales.csv");
+    final myData = await rootBundle.loadString("assets/sales.csv");
     List<List<dynamic>> csvTable = const CsvToListConverter().convert(myData);
 
     data = csvTable;
   }
-  // int _counter = 0;
-
-  // void _incrementCounter() {
-  //   setState(() {
-  //     _counter++;
-  //   });
-  // }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: FloatingActionButton(
+          child: const Icon(Icons.refresh),
+          onPressed: () async {
+            await loadAsset();
+            print(data);
+          }),
       appBar: AppBar(
-        title: Text(widget.title),
+        title: const Text("Table Layout and CSV"),
       ),
       body: SingleChildScrollView(
         child: Table(
@@ -79,12 +57,6 @@ class _MyHomePageState extends State<MyHomePage> {
           }).toList(),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-          child: const Icon(Icons.refresh),
-          onPressed: () async {
-            await loadAsset();
-            print(data);
-          }),
     );
   }
 }
