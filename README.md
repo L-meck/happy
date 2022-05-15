@@ -2,7 +2,7 @@
 
 a renderer project ai inspired by DeepMind.ai.
 
-## This Work is still in Development process!
+## This Work is still in Development!
 
 Not much to say here just get to WORK DUDE!!.
 
