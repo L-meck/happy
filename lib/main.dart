@@ -34,7 +34,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   List<List<dynamic>> data = [];
 
-  Future loadAsset() async {
+  loadAsset() async {
     final myData = await rootBundle.loadString('lib/assets/gravity.csv');
     List<List<dynamic>> csvTable = const CsvToListConverter().convert(myData);
 
