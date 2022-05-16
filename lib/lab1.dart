@@ -13,7 +13,7 @@ class _TableLayoutState extends State<TableLayout> {
   List<List<dynamic>> data = [];
 
   loadAsset() async {
-    final myData = await rootBundle.loadString("assets/sales.csv");
+    final myData = await rootBundle.loadString("lib/assets/gravity.csv");
     List<List<dynamic>> csvTable = const CsvToListConverter().convert(myData);
 
     data = csvTable;

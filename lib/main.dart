@@ -32,21 +32,14 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-    List<List<dynamic>> data = [];
+  List<List<dynamic>> data = [];
 
-  loadAsset() async {
-    final myData = await rootBundle.loadString("lib/sales.csv");
+  Future loadAsset() async {
+    final myData = await rootBundle.loadString('lib/assets/gravity.csv');
     List<List<dynamic>> csvTable = const CsvToListConverter().convert(myData);
 
     data = csvTable;
   }
-  // int _counter = 0;
-
-  // void _incrementCounter() {
-  //   setState(() {
-  //     _counter++;
-  //   });
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -79,12 +72,14 @@ class _MyHomePageState extends State<MyHomePage> {
           }).toList(),
         ),
       ),
+      // body: Container(child: Image.asset('lib/assets/hbd.jpg')),
       floatingActionButton: FloatingActionButton(
-          child: const Icon(Icons.refresh),
-          onPressed: () async {
-            await loadAsset();
-            print(data);
-          }),
+        child: const Icon(Icons.refresh),
+        onPressed: () async {
+          await loadAsset();
+          print(data);
+        },
+      ),
     );
   }
 }
