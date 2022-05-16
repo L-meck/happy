@@ -4,7 +4,7 @@ a renderer project ai inspired by DeepMind.ai.
 
 ## This Work is still in Development!
 
-Not much to say here just get to WORK DUDE!!.
+Not much to say just get to WORK DUDE!!.
 
 some helpfull links:
 
@@ -13,4 +13,4 @@ some helpfull links:
 - [Lab3: responsiveTable](https://pub.dev/packages/responsive_table)
 
 
-Get in touch on here by starring this Project.
+Get in touch on by starring this Project.
