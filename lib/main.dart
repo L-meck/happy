@@ -35,7 +35,8 @@ class _MyHomePageState extends State<MyHomePage> {
   List<List<dynamic>> data = [];
 
   loadAsset() async {
-    final myData = await rootBundle.loadString('lib/assets/gravity.csv');
+    final myData = await rootBundle
+        .loadString('lib/assets/labtest.csv'); // ('lib/assets/gravity.csv');
     List<List<dynamic>> csvTable = const CsvToListConverter().convert(myData);
 
     data = csvTable;
