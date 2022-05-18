@@ -55,22 +55,27 @@ class _MyHomePageState extends State<MyHomePage> {
             1: FixedColumnWidth(200.0),
           },
           border: TableBorder.all(width: 1.0),
-          children: data.map((item) {
-            return TableRow(
-                children: item.map((row) {
-              return Container(
-                color:
-                    row.toString().contains("NA") ? Colors.red : Colors.green,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    row.toString(),
-                    style: const TextStyle(fontSize: 20.0),
-                  ),
-                ),
-              );
-            }).toList());
-          }).toList(),
+          children: data.map(
+            (item) {
+              return TableRow(
+                  children: item.map(
+                (row) {
+                  return Container(
+                    color: row.toString().contains("NA")
+                        ? Colors.red
+                        : Colors.green,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        row.toString(),
+                        style: const TextStyle(fontSize: 20.0),
+                      ),
+                    ),
+                  );
+                },
+              ).toList());
+            },
+          ).toList(),
         ),
       ),
       // body: Container(child: Image.asset('lib/assets/hbd.jpg')),
