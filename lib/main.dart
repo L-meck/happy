@@ -50,11 +50,17 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: SingleChildScrollView(
         child: Table(
-          columnWidths: const {
-            0: FixedColumnWidth(100.0),
-            1: FixedColumnWidth(200.0),
-          },
-          border: TableBorder.all(width: 1.0),
+          defaultColumnWidth: const FixedColumnWidth(120.0),
+          border: TableBorder.all(
+            color: Colors.black,
+            style: BorderStyle.solid,
+            width: 2,
+          ),
+          // columnWidths: const {
+          //   0: FixedColumnWidth(100.0),
+          //   1: FixedColumnWidth(200.0),
+          // },
+          // border: TableBorder.all(width: 1.0),
           children: data.map(
             (item) {
               return TableRow(
@@ -80,7 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       // body: Container(child: Image.asset('lib/assets/hbd.jpg')),
       floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.refresh),
+        child: const Icon(Icons.air_sharp),
         onPressed: () async {
           await loadAsset();
           print(data);
