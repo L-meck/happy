@@ -14,6 +14,7 @@ part 'csv_row.dart';
 /// via their column header [String].
 ///
 /// CsvSheets can be visualized as such:
+
 ///
 ///          1    2    3
 ///       .----+----+----.
@@ -158,7 +159,6 @@ class CsvSheet {
       _contents!.removeLast();
     }
   }
-
   /// Access the column specified by [index]. Index may be a 1-based integer
   /// value or a string matching one of the header rows.
   ///
