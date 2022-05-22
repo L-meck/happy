@@ -28,7 +28,7 @@ class _TableLayoutState extends State<TableLayout> {
           onPressed: () async {
             await loadAsset();
             print(data);
-             //TODO: lazy loading data
+            //TODO: lazy loading data
           }),
       appBar: AppBar(
         title: const Text("Table Layout and CSV"),
@@ -58,6 +58,30 @@ class _TableLayoutState extends State<TableLayout> {
           }).toList(),
         ),
       ),
+      // body: DataTable(
+      //   columns: <DataColumn>[
+      //     DataColumn(label: Text('')),
+      //     DataColumn(label: Text('')),
+      //     DataColumn(label: Text('')),
+      //     DataColumn(label: Text('')),
+      //   ],
+      //   rows: data
+      //       .map(
+      //         (item) => DataRow(
+      //           // cells: item.map((row) =>
+      //           //     DataCell(Text(row.toString(),),),
+      //           //  ),
+      //           cells: [
+      //             DataCell(
+      //               Text(
+      //                 item.toString(),
+      //               ),
+      //             ),
+      //           ],
+      //         ),
+      //       )
+      //       .toList(),
+      // ),
     );
   }
 }
