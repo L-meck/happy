@@ -24,3 +24,6 @@ import 'package:flutter/widgets.dart';
 //     this.notifyListeners(); // for callback to view
 //   }
 // }
+
+// TODO: Reference
+// https://github.com/SupremNandalDev/jsonParsingAndDataTable/blob/master/lib/provider/myHomePageProvider.dart
