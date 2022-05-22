@@ -75,7 +75,7 @@ class CsvSheet {
         }
         _headers![val] = i;
       }
-      _row = CsvRow(_headers!, _rows);
+      _row = CsvRow(_headers!, _rows);//null safe update
       _contents = <List<String>>[];
       var allRowsLength = allRows.length;
       for (var index = 1; index < allRowsLength; index++) {

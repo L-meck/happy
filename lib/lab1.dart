@@ -27,7 +27,7 @@ class _TableLayoutState extends State<TableLayout> {
           child: const Icon(Icons.refresh),
           onPressed: () async {
             await loadAsset();
-            print(data);
+            print(data); //TODO: lazy loading data
           }),
       appBar: AppBar(
         title: const Text("Table Layout and CSV"),
