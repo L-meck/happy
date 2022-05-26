@@ -5,6 +5,8 @@ import 'package:flutter/services.dart' show rootBundle;
 import 'csv_null_update/csv_sheet.dart';
 
 class TableLayout extends StatefulWidget {
+  const TableLayout({Key? key}) : super(key: key);
+
   @override
   _TableLayoutState createState() => _TableLayoutState();
 }
@@ -36,8 +38,8 @@ class _TableLayoutState extends State<TableLayout> {
       body: SingleChildScrollView(
         child: Table(
           columnWidths: const {
-            0: FixedColumnWidth(100.0),
-            1: FixedColumnWidth(200.0),
+            0: FixedColumnWidth(200.0),
+            1: FixedColumnWidth(400.0),
           },
           border: TableBorder.all(width: 1.0),
           children: data.map((item) {

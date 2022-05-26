@@ -186,6 +186,7 @@ class CsvSheet {
   /// for each row. It is an error if action tries to modify the list.
   ///
   /// The CsvRow is indexable via the headers if applicable.
+  /// 
   void forEachRow(void Function(CsvRow cells) action) {
     // void forEachRow(void action(CsvRow cells)) {
     for (var row in _contents!) {
